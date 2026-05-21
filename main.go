@@ -19,10 +19,7 @@ var waitingForAnswer = make(map[string]bool)
 var todaysQuestion string
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		panic("Error loading .env file")
-	}
+	godotenv.Load()
 	token := os.Getenv("TOKEN")
 
 	dg, err := discordgo.New("Bot " + token)
